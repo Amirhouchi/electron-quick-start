@@ -1,0 +1,15 @@
+/* styles.css */
+
+/* Add styles here to customize the appearance of your app */
+
+body{
+    background-color:#2B2E3B;
+    color:white;
+    user-select: none; /*ingore la selection de text ;*/
+}
+.bodyMain{
+    -webkit-app-region: drag; /* deplacement des fenaitre [content] */
+}
+.inputMain{
+    -webkit-app-region: no-drag; /* deplacement des fenaitre [content] */
+}

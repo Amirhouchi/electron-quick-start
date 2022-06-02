@@ -1,0 +1,65 @@
+<html>
+	<head>
+<!-- Google Sign in -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="586734493477-ok88docf2qsgqnvgoke6ens402813hct.apps.googleusercontent.com">
+<div class="g-signin2" data-onsuccess="handleCredentialResponse"></div>
+</head>
+<body>
+ <!-- Sign in -->
+  <div class="g-signin2" ></div>
+  <div>
+  <p>Nom</p>
+	  <p id="name"></p>
+  <p>image</p>
+	  <img id="profile"></img>
+  <p>email</p>
+	  <p id="email"></p>
+  </div>
+	<div id="g_id_onload"
+         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+         data-login_uri="https://your.domain/your_login_endpoint"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+    </div>
+<button id="talkTo-ch1" >send a String to main process</button>
+<br>
+<script src="../renderer.js"></script>
+</body>
+</html>
+https://developers.google.com/identity/gsi/web/guides/migration#popup-mode_1
+
+<!--
+<script type="text/javascript">
+	  function onSignIn(googleUser) {
+		  var profile = googleUser.getBasicProfile();
+		  $('#name').text('Hi ' + profile.getName());
+		  $('#profile').attr('src', profile.getImageUrl());
+
+		  // Send google login token to server
+		  $.ajax({
+			  type : "POST",
+			  url : '/login',
+			  dataType : 'json',
+			  data : JSON.stringify({
+				  googleIdToken : googleUser.getAuthResponse().id_token
+			  }),
+			  contentType : 'application/json',
+			  success : function(result) {
+				  $('#email').text('Server retrieved email: ' + result.email)
+				  console.log(result)
+			  }
+		  })
+	  }
+  </script>
+
+
+-->
