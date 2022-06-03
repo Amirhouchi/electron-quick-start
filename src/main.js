@@ -14,17 +14,21 @@ function createWindow () {
 
     }
   })
-
+  
   // and load the index.html of the app.
   mainWindow.loadFile('./vue/index.html')
-
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
-ipcMain.on("ch1",(e,args)=>{
-  console.log(args)
-
+ ipcMain.on("ch1",(e,args) =>{
+  console.log(args);
+  console.log("Amiiiiiiiiiiiiiiir");
+  e.sender.send("ch2", "Pong")
 })
+app.on('browser-window-focus',() =>{
+  console.log("app_is_focssed");
+})
+
 
 
 // This method will be called when Electron has finished
@@ -71,5 +75,4 @@ function onSignIn(googleUser) {
   var id_token = googleUser.getAuthResponse().id_token;
   console.log("ID Token: " + id_token);
 }
-
 
