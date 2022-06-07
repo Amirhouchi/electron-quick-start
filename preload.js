@@ -14,7 +14,16 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // ipc **
-  document.getElementById("talkTo-ch1").addEventListener("click",() => {
+  document.getElementById('btnCreate').addEventListener("click",() => {
+    ipcRenderer.send("chCreate1","allez");
+    })
+  
+    ipcRenderer.on("chCreate2",(e,args) =>{
+      console.log(args);
+    })
+
+  // ipc **
+  document.getElementById('signOut').addEventListener("click",() => {
   ipcRenderer.send("ch1","Ping");
   })
 

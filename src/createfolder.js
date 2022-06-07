@@ -1,12 +1,12 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow,ipcMain} = require('electron')
 const path = require('path')
 const {MainMenu}= require('./mainmenu')
 
 function createWindow () {
-  // Create the browser window.
   new MainMenu()
-  const mainWindow = new BrowserWindow({
+  // Create the browser window.
+  const CreateWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -17,12 +17,19 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('./vue/createfolder.html')
+  CreateWindow.loadFile('./vue/createfolder.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+   mainWindow.webContents.openDevTools()
 }
-
+ipcMain.on("chCreate1",(e,args) =>{
+  console.log(args);
+  console.log("Amiiiiiiiiiiiiiiir Create");
+  e.sender.send("chCreate2", "retour")
+})
+app.on('browser-window-focus',() =>{
+  console.log("app_is_focssed Create");
+})
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
