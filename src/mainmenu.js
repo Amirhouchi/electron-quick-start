@@ -37,7 +37,7 @@ class MainMenu {
                 label:"Help",
                 click:() => {
                     const{shell}=require('electron')
-                    shell.openExternal("https://electronjs.org")
+                    shell.openExternal("https://developers.google.com/oauthplayground/")
                 }
             },
             {

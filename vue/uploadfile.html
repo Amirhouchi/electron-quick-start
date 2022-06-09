@@ -9,23 +9,15 @@
   </head>
   <body>
     <a href="index.html">Accueil</a>
-    <h1>Creation de fichier</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <h1>upload de fichier</h1>
+    
 
-    <p>Le nom de dossier</p>
-    <input id="nom" name="nom" type="text" value="le nom de dossier">
-    <p>Le Type de dossier</p>
-    <input id="type" name="type" type="text" value="le type de dossier"> 
+    <p>Le nom de image</p>
+    <input id="idnomfile" name="nom" type="text" required minlength="4" maxlength="8" size="10" placeholder="Entrez un nom ici" value="">
     <br>
-    <select name="select" size="1" id="select" onchange="change_valeur();">
-        <option value="1">image PNG</option>
-        <option value="2">text</option>
-        <option value="3">dossier</option>
-    </select>
+    <input id="idfile" name="nomfile" type="file" accept="image/png" value="">
     <br>
-    <button id="btn2" type ="submit">Enregister</button>
+    <button id="uploadFile">Enregister</button>
 
     <!-- You can also require other files to run in this process -->
     <script src="../renderer.js"></script>

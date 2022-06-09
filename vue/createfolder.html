@@ -8,20 +8,21 @@
     <title>create folder!</title>
   </head>
   <body>
+  
     <a href="index.html">Accueil</a>
     <h1>Creation de dossier</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    
 
     <p>Le nom de dossier</p>
-    <input id="nom" name="nom" type="text" value="le nom de dossier">
+    <input type="text" name="name" required minlength="4" maxlength="8" size="10" placeholder="Entrez un nom ici"  id="in" value=""  >
+    <!--
     <p>Le Type de dossier</p>
-    <input id="type" name="type" type="text" value="le type de dossier"> 
+    <input id="type" name="type" type="text" value="le type de dossier">  -->
     
     <br>
-    <button id="btnCreate">Enregister</button>
+    <button id="btnCreate" type ="submit">Enregister</button>
     <!-- You can also require other files to run in this process -->
-    <script src="../rendererCreate.js"></script>
+    <script src="../renderer.js"></script>
+ 
   </body>
 </html>
